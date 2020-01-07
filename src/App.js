@@ -27,8 +27,6 @@ class App extends Component {
     return (
       <div className="App">
         <div >
-          <br />
-          <br/>
         <div className="add row">
                 {this.state.dices.map((elemento)=> <Dice className="dado" info={elemento} /> )}
             </div>
