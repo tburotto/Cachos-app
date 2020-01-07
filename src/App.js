@@ -18,7 +18,7 @@ class App extends Component {
   roll(){
     let newDices = []
     this.state.dices.map((element)=> {
-      let r = this.getRndInteger(1,6)
+      let r = this.getRndInteger(1,7)
       newDices.push(r)
     })
     this.setState({dices: newDices})
@@ -34,8 +34,9 @@ class App extends Component {
             </div>
         </div>
 
-        <div className="fixed-bottom"> <div className="btn btn-info" onClick={()=>this.roll()}> Roll</div>
+        <div className="fixed-bottom">
           <div className="add float-right">
+          <div className="add btn btn-info" onClick={()=>this.roll()}> Roll</div>
             <button className="btn btn-info btn-circle" onClick={() => this.setState({ dices: [...this.state.dices, 1]})}> + </button>
             <button className="btn btn-info btn-circle" onClick={this.state.dices.length>= 2  ? () => this.setState({dices: this.state.dices.slice(0,-1) }) : null}> - </button>
           </div></div>
